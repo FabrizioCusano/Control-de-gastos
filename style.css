@@ -1,0 +1,200 @@
+.body{
+    background-color: whitesmoke;
+}
+.SaldoTotal{
+    background-color: #4CAF50;
+    display: flex;
+    border-radius: 20px;
+    height: 170px;
+    box-shadow: 0px 0px 2px green;
+}
+.billetera{
+    width: 200px;
+    height: 130px;
+    margin-top: 35px;
+    margin-left: 45px;
+    align-items: center;
+}
+.saldototaltexto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.saldo{
+    font-size: 50px;
+    font-family: "Friend\ Bestie.otf";
+    font-weight: bold;
+}
+.saldototaltexto p{
+    margin: 1px;
+    margin-top:15px;
+}
+.menuboton{
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    position:  absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 60px;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+.IngresarNumero{
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    border: 2px solid #4CAF50;
+    font-size: 15px;
+    font-family: "Friend\ Bestie.otf";
+    font-weight: bold;
+    display: none;
+    bottom: 20%;
+    position:  absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.Confirmar{
+    display: none;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightgreen;
+    color: green;
+    font-family: "Friend\ Bestie.otf";
+    font-weight: bold;
+    border-radius: 20px;
+    border-style: none;
+    padding:12px 12px;
+}
+.botonAgregar{
+    border-radius: 500px;
+    background-color: #4CAF50;
+    color: white;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    position:  absolute;
+    left: 50%;
+    transform: translateX(-50%);    
+    font-size: 40px;
+    font-family: "signo+";
+    font-weight: bold;
+    border-style: none;
+}
+.botonGasto{
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
+    background-color: red;
+    color: white;
+    font-family: "Friend\ Bestie.otf";
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    border-style: none;
+    font-size: 17px;
+}
+.botonIngreso{
+    height: 40px;
+    font-size: 17px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    font-family: "Friend\ Bestie.otf";
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    border-style: none;
+}
+@font-face{
+    font-family: "signo+";
+    src: url("Gocake.ttf");
+}
+@font-face{
+    font-family: "Gastoletra";
+    src: url("Friend\ Bestie.otf");
+}   
+.tarjetamovimientos{
+    background-color: white;
+    border-radius: 20px;
+    padding: 1px 15px;
+    margin-top: 5%;
+    box-shadow: 0px 0px 5px lightgray;
+}
+.paginacion button {
+    background-color: #c8e6c9;
+    border-radius: 100px;
+    border-style: none;
+    padding:5px 9px;
+    font-family: "Friend\ Bestie.otf";
+    font-weight: bold;
+}
+.paginacion{
+    padding:8px;
+    display: flex;
+    gap: 5px;
+}
+.paginacion button.activo{
+    background-color: #00C400;
+    
+}
+.pantallaborrosa{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.3);
+}
+.numerossaldo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);  
+    bottom: 40%;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: whitesmoke;
+    color:#4CAF50;
+}
+.grillanumeros{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    color: #4CAF50;
+    margin-bottom: 20%;
+}
+.boton0{
+    grid-column: 2 / 3;
+}
+.boton0, .boton1,.boton2,.boton3,.boton4,.boton5,.boton6,.boton7
+,.boton8,.boton9{
+    background-color: lightgray;
+    border-radius: 50%;
+    border-style: none;
+    font-size: 30px;
+    font-family: "Friend\ Bestie.otf";
+    padding: 10px 18px;
+}
+.confirmarSaldo{
+    border-radius: 20px;
+    border-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Friend\ Bestie.otf";
+    background-color: lightgray;
+    padding: 10px 10px;
+    bottom: 3%;
+    font-size: 19px;
+}
+.saldoqueveelcliente{
+    font-size: 30px;
+    margin-top: 2px;
+}
