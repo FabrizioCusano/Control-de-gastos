@@ -52,7 +52,7 @@
     font-family: "Friend\ Bestie.otf";
     font-weight: bold;
     display: none;
-    bottom: 20%;
+    bottom: 30%;
     position:  absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -60,7 +60,7 @@
 .Confirmar{
     display: none;
     position: absolute;
-    bottom: 25%;
+    bottom: 35%;
     left: 50%;
     transform: translateX(-50%);
     background-color: lightgreen;
@@ -181,6 +181,8 @@
     font-size: 30px;
     font-family: "Friend\ Bestie.otf";
     padding: 10px 18px;
+    color: black;
+    font-weight: bold;
 }
 .confirmarSaldo{
     border-radius: 20px;
@@ -193,8 +195,52 @@
     padding: 10px 10px;
     bottom: 3%;
     font-size: 19px;
+    font-weight: bold;
 }
 .saldoqueveelcliente{
     font-size: 30px;
     margin-top: 2px;
+}
+.borrarnumerodesaldo{
+    position: absolute;
+    left: 76%;
+    bottom: 4%;
+    border-radius: 50%;
+    border-style: none;
+    font-size: 17px;
+    background-color: lightgray;
+    padding: 5px 9px;
+}
+.categorias{
+    position: absolute;
+    left: 40%;
+    transform: translateX(-35%);
+    bottom: 20%;
+    display: none;
+}
+.comida,.compras,.otros,.ropa{
+    border-style: none;
+    border-radius: 50%; 
+    align-items: center;
+    justify-content: center;
+}
+.comida{
+    color: #22A85A;
+    background-color:#DCF3E4;
+}
+.compras{
+    background-color:#FDE1E4 ;
+    color: #E85D75;
+}
+.otros{
+    background-color: #EDE4FB;
+    color: #8B5CF6;
+}
+.ropa{
+    background-color: #FCE1F1;
+    color: #D6459B;
+}
+.material-symbols-outlined{
+    font-size: 35px !important;
+    padding: 8px 5px;
 }

@@ -1,4 +1,5 @@
 let tipo;
+let categoriaElegida;
 const saldoenpantalla = document.querySelector(".saldo");
 let saldo;
 let movimientos = [];
@@ -8,20 +9,28 @@ if (localStorage.getItem("movimientosguardados") !== null) {
 }
 const saldoqueveelcliente = document.querySelector(".saldoqueveelcliente");
 let numeroIngresado = "";
-const boton0 = document.querySelector(".boton0")
-const boton1 = document.querySelector(".boton1")
-const boton2 = document.querySelector(".boton2")
-const boton3 = document.querySelector(".boton3")
-const boton4 = document.querySelector(".boton4")
-const boton5 = document.querySelector(".boton5")
-const boton6 = document.querySelector(".boton6")
-const boton7 = document.querySelector(".boton7")
-const boton8 = document.querySelector(".boton8")
-const boton9 = document.querySelector(".boton9")
+const boton0 = document.querySelector(".boton0");
+const boton1 = document.querySelector(".boton1");
+const boton2 = document.querySelector(".boton2");
+const boton3 = document.querySelector(".boton3");
+const boton4 = document.querySelector(".boton4");
+const boton5 = document.querySelector(".boton5");
+const boton6 = document.querySelector(".boton6");
+const boton7 = document.querySelector(".boton7");
+const boton8 = document.querySelector(".boton8");
+const boton9 = document.querySelector(".boton9");
+const borrarnumerodesaldo = document.querySelector(".borrarnumerodesaldo");
 const pantallaborrosa = document.querySelector(".pantallaborrosa");
 const confirmarSaldo = document.querySelector(".confirmarSaldo");
 const ingresarnumero = document.querySelector(".IngresarNumero");
+const categorias = document.querySelector(".categorias");
 const boton = document.querySelector(".botonAgregar");
+const iconosCategoria = {
+    comida: "fork_spoon",
+    ropa: "Apparel",
+    compras: "Shopping_Cart",
+    otros: "more_horiz"
+};
 boton.addEventListener("click", function(){
 menu.style.display = "flex"
 });
@@ -33,8 +42,7 @@ const movimientostarjeta = document.querySelector(".tarjetamovimientos");
 const paginacion = document.querySelector(".paginacion");
 gasto.addEventListener("click", function(){
     tipo = "gasto"
-    ingresarnumero.style.display = "flex"
-    confirmar.style.display = "flex"
+    categorias.style.display = "flex"
 });
 ingreso.addEventListener("click", function(){
     tipo = "ingreso"
@@ -60,7 +68,7 @@ if (tipo === "gasto") {
     ingresarnumero.value = ""
     localStorage.setItem("saldoguardado", saldo)
 }
-movimientos.push({fecha: new Date().toLocaleDateString(), tipo: tipo, cantidad: cantidad})
+movimientos.push({fecha: new Date().toLocaleDateString(), tipo: tipo, cantidad: cantidad,categoria: categoriaElegida})
 localStorage.setItem("movimientosguardados",JSON.stringify(movimientos) )
 funcionmovimientos();
 funcionpaginacion();
@@ -81,11 +89,11 @@ function funcionmovimientos(){
         const p = document.createElement("p");
         if (movimiento.tipo === "gasto"){
             p.style.color = "red";
-            p.textContent = movimiento.fecha + "- $" + movimiento.cantidad;
+            p.textContent = movimiento.categoria +"-" + movimiento.fecha + "- $" + movimiento.cantidad;
         }
         else{
             p.style.color = "green";
-            p.textContent = movimiento.fecha + "+ $" + movimiento.cantidad;
+            p.textContent = movimiento.categoria + "-" + movimiento.fecha + "+ $" + movimiento.cantidad;
         }
         movimientostarjeta.appendChild(p);
     }
@@ -155,4 +163,16 @@ saldo = Number(numeroIngresado);
 localStorage.setItem("saldoguardado", saldo);
     saldoenpantalla.textContent = "$" + saldo;
     pantallaborrosa.style.display = "none";
-})
+});
+borrarnumerodesaldo.addEventListener("click",function(){
+    numeroIngresado = numeroIngresado.slice(0,numeroIngresado.length-1)
+    saldoqueveelcliente.textContent = "$" + numeroIngresado;
+});
+categorias.addEventListener("click", function(event){
+    const boton = event.target.closest("button");
+    if (!boton) return;
+    categoriaElegida = boton.classList[0];
+    categorias.style.display = "none";
+    ingresarnumero.style.display = "flex";
+    confirmar.style.display = "flex";
+});
